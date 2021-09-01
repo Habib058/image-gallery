@@ -1,0 +1,5 @@
+.image:hover{
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: all .5s ease-in-out;
+}
