@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 
 const Dats = () => {
-    const [dates, setDates] = useState([]);
+    const [img, setImg] = useState(null);
 
     const datesOfWeek = [...Array(7)].map((_, i) => {
         const d = new Date()
@@ -10,16 +10,19 @@ const Dats = () => {
         return d;
     })
     useEffect(() => {
-        const datesForGraph = datesOfWeek.forEach(date => {
-            // fetch('http://localhost:5000/imageByDates', {
-            //     method: 'POST',
-            //     headers: { 'content-type': 'application/json' },
-            //     body: JSON.stringify({date:date})
-            // })
-            // .then(res =>res.json())
-            // .then(data=>console.log(data))
+        let datesForGraph = datesOfWeek.forEach(date => {
+            fetch('http://localhost:5000/imageByDates', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({date:date})
+            })
+            .then(res =>res.json())
+            .then(data=> {
+                setImg(data);
+            })
         })
-    }, [])
+    },[])
+    console.log(img.length);
 
     return (
         <div>
