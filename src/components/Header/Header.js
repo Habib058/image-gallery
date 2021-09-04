@@ -53,8 +53,12 @@ const Header = () => {
             <h1 className='text-center mt-5'>Image Gallery</h1>
             <div className="uploadContent">
                 <div className="container">
-                <Link className="text-center text-decoration-none" to="/stats"><button className="btn btn-primary button ">Go To Stats</button></Link>
-                    <h2 className="m-5 text-center">Add Meme</h2>
+                <Link className="text-center text-decoration-none" to="/stats">
+                    <div className='col-6 mx-auto mt-3'>
+                    <button className="btn btn-primary button " type="button">Go To Stats</button>
+                    </div>
+                </Link>
+                    <h2 className="mt-3 mb-3 text-center">Add Meme</h2>
                     <div className="container">
                         <form className="row" onSubmit={handleSubmit(onSubmit)}>
                             <div className="col-md-4 mb-3">

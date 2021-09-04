@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
-import './Dats.css'
+import './Graph.css'
 
-const Dats = () => {
+const Graph = () => {
     const [count, setCount] = useState({});
     const [img, setImg] = useState([]);
 
@@ -59,11 +59,6 @@ const Dats = () => {
             }
         ]
     }
-
-
-
-
-
     return (
         <div className='lineChart'>
             <Bar
@@ -85,4 +80,4 @@ const Dats = () => {
     );
 };
 
-export default Dats;
+export default Graph;

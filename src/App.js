@@ -2,13 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Images from './components/Images/Images';
-import Dats from './components/Dates/Dats';
+import Graph from './components/Graph/Graph';
 import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
           <Images />
         </Route>
         <Route path = "/stats">
-          <Dats/>
+          <Graph/>
         </Route>
       </Switch>
     </Router>
