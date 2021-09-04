@@ -7,7 +7,7 @@ const Images = () => {
     const [img,setImg] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/images')
+        fetch('https://floating-headland-50904.herokuapp.com/images')
         .then(res =>res.json())
         .then(data=>setImg(data))
     },[])

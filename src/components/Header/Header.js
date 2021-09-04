@@ -1,21 +1,23 @@
 import axios from 'axios';
 import React, { useState} from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [img, setImg] = useState(null);
     const onSubmit = data => {
-       let d = new Date();
-       d.setDate(d.getDate());
-       console.log(d);
+    //    let d = new Date();
+    //    d.setDate(d.getDate());
+    //    console.log(d);
         const imgDetails = {
-            date:d,
+            date:new Date().toDateString(),
             cols:data.col,
             imgUrl: img
         };
-        const url = 'http://localhost:5000/addImage';
+        console.log(imgDetails.date);
+        const url = 'https://floating-headland-50904.herokuapp.com/addImage';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -26,6 +28,7 @@ const Header = () => {
             .then(res => res.json())
             .then(result=>{
                 alert('image Added Successfully');
+                window.location.reload();
                 
             })
     }
@@ -50,6 +53,7 @@ const Header = () => {
             <h1 className='text-center mt-5'>Image Gallery</h1>
             <div className="uploadContent">
                 <div className="container">
+                <Link className="text-center text-decoration-none" to="/stats"><button className="btn btn-primary button ">Go To Stats</button></Link>
                     <h2 className="m-5 text-center">Add Meme</h2>
                     <div className="container">
                         <form className="row" onSubmit={handleSubmit(onSubmit)}>

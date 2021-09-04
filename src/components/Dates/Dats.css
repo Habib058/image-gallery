@@ -1,0 +1,9 @@
+.lineChart{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* background-color: white; */
+}
+.home_link{
+    text-decoration: none;
+}

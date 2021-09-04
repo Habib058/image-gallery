@@ -5,12 +5,13 @@ const ImageCard = ({img}) => {
     
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteImg/${id}`, {
+        fetch(`https://floating-headland-50904.herokuapp.com/deleteImg/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
             .then(data => {
                 alert('Tour deleted successfully');
+                window.location.reload();
                 
             })
     }
