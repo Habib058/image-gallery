@@ -75,7 +75,11 @@ const Graph = () => {
                     }
                 }}
             />
-            <Link className="text-center text-decoration-none" to="/"><h3 className="mt-5">Go to Home</h3></Link>
+            <Link className="text-center text-decoration-none" to="/">
+                    <div className='col-6 mx-auto mt-3'>
+                    <button className="btn btn-primary button " type="button">Go To Home</button>
+                    </div>
+                </Link>
         </div>
     );
 };
